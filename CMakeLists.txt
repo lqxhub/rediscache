@@ -7,7 +7,7 @@ PROJECT(rediscache LANGUAGES "C" VERSION 4.0.14)
 
 AUX_SOURCE_DIRECTORY(. LIB_SOURCES)
 
-SET(CMAKE_C_FLAGS "-std=c99 -O2 -pedantic -DREDIS_STATIC='' -Wall -W -Wno-missing-field-initializers -Wno-uninitialized -fPIC -Wcpp")
+SET(CMAKE_C_FLAGS "-std=c99 -O2 -fno-strict-aliasing -pedantic -DREDIS_STATIC='' -Wall -W -Wno-missing-field-initializers -Wno-uninitialized -fPIC -Wcpp")
 
 FILE(GLOB_RECURSE H_FILES "*.h")
 ADD_LIBRARY(rediscache STATIC ${LIB_SOURCES})
