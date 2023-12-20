@@ -4,10 +4,10 @@ OPTION(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 OPTION(DISABLE_TESTS "If tests should be compiled or not" OFF)
 
 PROJECT(rediscache LANGUAGES "C" VERSION 4.0.14)
-
+SET(CMAKE_C_STANDARD 99)
 AUX_SOURCE_DIRECTORY(. LIB_SOURCES)
 
-SET(CMAKE_C_FLAGS "-std=c99 -O2 -fno-strict-aliasing -pedantic -DREDIS_STATIC='' -Wall -W -Wno-missing-field-initializers -Wno-uninitialized -fPIC -Wcpp")
+SET(CMAKE_C_FLAGS "-O2 -fno-strict-aliasing -pedantic -Wall -W -Wno-missing-field-initializers -Wno-uninitialized -Wcpp")
 
 FILE(GLOB_RECURSE H_FILES "*.h")
 ADD_LIBRARY(rediscache STATIC ${LIB_SOURCES})
